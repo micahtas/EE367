@@ -1,0 +1,13 @@
+Name: Micah Tashima
+Assignment: Machine Problem 3
+Class: EE367
+Date: 2/26/2015
+
+Program compiles but does not work properly.
+
+To run:
+gcc queue.c
+a.out
+
+Without having completed the implementations I can only guess that the upgraded version
+of Warrior 3 would be the best option.

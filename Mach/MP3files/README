@@ -1,0 +1,10 @@
+Micah Tashima
+
+I couldn't get the code to work when getting input and output files from the
+main. So right now after making the executable is it being fed a text string
+through a define statement, then creates the codebook, encodes and decode.
+
+To complie:
+	make
+To run:
+	huffman

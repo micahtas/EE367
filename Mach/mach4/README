@@ -1,0 +1,10 @@
+Name: Micah Tashima
+Class: EE367
+Assignment: Machine Problem 4
+
+********************
+Compile Instructions
+********************
+
+gcc tree.c
+a.out

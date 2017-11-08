@@ -1,0 +1,13 @@
+Name:	Gilbert Yim
+Date:	5/5/2015
+Instructions to compile:	
+	-Compile encode: gcc -o encode huffman.c
+	-Compile decode: gcc -o decode unhuffman.c 
+Instructions to run programs:
+	-Run encode:	encode <file to compress>
+	-Run decode:	decode <file to uncompress>
+Compression ratios:
+	-FrenchLanguage.html: 17110/24713
+	-SomeSpanishStoryIDontKnow.html: 50298/73201
+	-TheLottery.html: 16586/24887
+
