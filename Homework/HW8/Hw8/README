@@ -1,0 +1,76 @@
+Name: Micah Tashima
+Class: EE367
+Assignment: Homework 8
+
+********************
+Compile Instructions
+********************
+To compile and run conf.c
+	gcc conf.c -lm
+	a.out
+
+
+About conf.c:
+
+To compile conf.c 
+
+gcc conf.c -lm
+
+lm is the library math.h
+
+---------------------------------------------
+About insert.c:
+
+To compile insert.c
+
+gcc insert.c -lrt
+
+lrt is the library for time.h
+
+If you want to use functions from math.h such as log( ) then
+you compile
+
+gcc insert.c -lrt -lm
+
+lm is the library for math.h
+
+insert.c can be compiled using either clock() or clock_gettime() by
+setting the macro CLOCK at the beginning of the program.
+
+To use clock(), set 
+#define CLOCK 1
+
+To use clock_gettime(), set
+#define CLOCK 0
+
+Quirky things about insert.c:
+
+The method of measuring delay is by first recording the "clock"
+before running the insertion code.  Then record the "clock" after
+the insertion code.  The difference between the before and
+after times is the running time of insertion sort code.  
+
+However, this delay may also include the running time of other
+processes because a CPU will often be time shared among multiple
+processes.  Then the measured delay is not the actual delay
+of running insertion sort.
+
+One way to get around this problem for the case of clock_gettime
+is to configure it using CLOCK_PROCESS_CPUTIME_ID.  Then the
+clock increments only when the process is running.  Otherwise,
+it is suspended.
+
+But apparently that isn't enough.  I'm not sure what the problem
+was except perhaps the operating system was not configured to use
+the most accurate clock.  I can't change that unless I have 
+supervisor (i.e., super-user) priviledges which I don't.
+
+After experimenting a bit.  I found that running the insertion sort
+code for a little while seems to get rid of fluctuations in the clock.
+So insert.c is implemented with a for-loop which loops twice.  
+Each pass through the loop will measure insertion sort for different
+array sizes.  However, the results are printed only for the
+second pass.  The data from the first pass is not used.  That seems
+to take care of the problem.
+ 
+
