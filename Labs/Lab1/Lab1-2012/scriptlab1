@@ -1,0 +1,6 @@
+#!/bin/sh
+set Data/*
+for a in $*; do
+./sum $a
+>> lab1b-results
+done
