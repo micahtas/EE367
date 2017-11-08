@@ -1,0 +1,32 @@
+net2: host.o ultilities.o link.o man.o main.o net.o switch.o queue.o
+	gcc -o net2 host.o utilities.o link.o man.o main.o net.o switch.o queue.o
+
+main.o: main.c
+	gcc -o main.o
+
+host.o: host.c
+	gcc -o host.o
+
+man.o: man.c
+	gcc -o man.c
+
+net.o: net.c
+	gcc -o net.o
+
+utilities.o: utilities.c
+	gcc -o utilities.c
+
+link.o: link.c
+	gcc -o link.c
+
+switch.o: switch.c
+	gcc -o switch.c
+
+queue.o: queue.c
+	gcc -o queue.c
+
+clean:
+	rm -f *.o
+
+real_clean:
+	rm -f net2
